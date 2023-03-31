@@ -30,3 +30,9 @@ save(svmModel, file = "movie_genre_model.RData")
 
 # Load the model
 load("movie_genre_model.RData")
+
+# Print the accuracy of the model
+print(paste("Accuracy of the model:", round(100*sum(predictions == test$Genre)/length(predictions), 2), "%"))
+
+# Save the model plot
+png("svm_model_plot.png")
