@@ -36,3 +36,12 @@ print(paste("Accuracy of the model:", round(100*sum(predictions == test$Genre)/l
 
 # Save the model plot
 png("svm_model_plot.png")
+plot(svmModel)
+dev.off()
+
+# Load the model plot
+svmPlot <- readPNG("svm_model_plot.png")
+
+# Show the model plot
+library(grid)
+grid.raster(svmPlot, interpolate=TRUE)
