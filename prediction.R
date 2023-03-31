@@ -24,3 +24,9 @@ predictions <- predict(svmModel, newdata = test)
 
 # Evaluate the model using confusion matrix
 confusionMatrix(predictions, test$Genre)
+
+# Save the model
+save(svmModel, file = "movie_genre_model.RData")
+
+# Load the model
+load("movie_genre_model.RData")
